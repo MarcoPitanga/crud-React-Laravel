@@ -1,9 +1,13 @@
-import './styles.css'
+import { CardCadastro } from '../../components/CardCadastro'
+import { CardAlterar } from '../../components/CardAlterar'
+
+import { Container } from './styles'
 
 export const Home = () => {
   return (
-    <>
-      <h1>Hello World!</h1>
-    </>
+    <Container>
+      <CardCadastro />
+      <CardAlterar />
+    </Container>
   )
 }
