@@ -7,7 +7,7 @@ export const Card = styled.div`
 `
 
 export const Titulo = styled.h2`
-  color: #41eb0e;
+  color: #0d8efd;
   font-size: 26px;
 `
 
