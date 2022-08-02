@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use \App\Models\Pessoa;
 use Illuminate\Http\Request;
 
 class PessoaController extends Controller
 {
     public function buscar($id)
     {
-        $pessoas = \App\Models\Pessoa::where('id', $id)->get(['id', 'nome', 'idade', 'sexo']);
+        $pessoas = Pessoa::where('id', $id)->get(['id', 'nome', 'idade', 'sexo']);
         return $pessoas;
     }
 
@@ -20,7 +21,7 @@ class PessoaController extends Controller
             'sexo' => $req->sexo
         ];
 
-        return \App\Models\Pessoa::create($pessoa);
+        return Pessoa::create($pessoa);
     }
 
     public function atualizar(Request $req, $id)
@@ -31,15 +32,22 @@ class PessoaController extends Controller
             'sexo' => $req->sexo
         ];
 
-        $pessoa = \App\Models\Pessoa::find($id);
+        $pessoa = Pessoa::find($id);
 
         return $pessoa->update($dados);
     }
 
     public function deletar($id)
     {
-        $pessoa = \App\Models\Pessoa::find($id);
+        $pessoa = Pessoa::find($id);
 
         return $pessoa->delete();
+    }
+
+    public function listar()
+    {
+        $pessoas = Pessoa::all();
+
+        return $pessoas;
     }
 }

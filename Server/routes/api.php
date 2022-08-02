@@ -26,3 +26,5 @@ Route::get('/buscar/{id}', [PessoaController::class, 'buscar']);
 Route::put("atualizar/{id}", [PessoaController::class, 'atualizar']);
 
 Route::get('/deletar/{id}', [PessoaController::class, 'deletar']);
+
+Route::get('/listar', [PessoaController::class, 'listar']);
